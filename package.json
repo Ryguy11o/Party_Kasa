@@ -1,0 +1,14 @@
+{
+  "name": "party_light",
+  "version": "1.0.0",
+  "description": "Using node to create various different party modes for my tplink lightbulb",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ryan",
+  "license": "ISC",
+  "dependencies": {
+    "tplink-lightbulb": "^1.4.1"
+  }
+}
