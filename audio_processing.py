@@ -27,6 +27,14 @@ import random
 import os
 from Naked.toolshed.shell import execute_js, muterun_js
 from subprocess import STDOUT, check_output
+import threading
+
+
+def thread():
+	try:
+		check_output('node party.js', stderr=STDOUT, timeout=1)
+	except:
+		print("failure")
 
 
 CHUNK = 2**11
@@ -63,11 +71,10 @@ while True:
 
 	previousInt = num 
 	if(change):
-		#os.system('tplight hsb 192.168.0.30 ' + str(random.randint(1,360)) + ' 100 ' + '100')
-		try:
-			execute_js('party.js')
-		except:
-			print("failure")
+			#execute_js('party.js')
+			#output = check_output('node party.js', stderr=STDOUT, timeout=1)
+		threading.Thread(target=thread).start()
+		
 		
 		test = 'peak'
 	else:
